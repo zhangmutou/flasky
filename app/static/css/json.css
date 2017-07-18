@@ -1,0 +1,21 @@
+pre {
+   background-color: ghostwhite;
+   border: 1px solid silver;
+   padding: 10px 20px;
+   margin: 20px;
+}
+.json-key {
+   color: brown;
+   /*font-size:10px;*/
+   }
+.json-value {
+   color: navy;
+   /*font-size:10px;*/
+   }
+.json-string {
+   color: olive;
+   /*font-size:10px;*/
+   }
+.req-url {
+  color: olive;
+}

@@ -382,3 +382,28 @@ class Comment(db.Model):
 
 
 db.event.listen(Comment.body, 'set', Comment.on_changed_body)
+
+
+class NexApiCase(db.Model):
+    # nex api用例表
+    __tablename__ = 'nex_api_case'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    desc = db.Column(db.String(100))
+    url = db.Column(db.String(100))
+    request_type = db.Column(db.String(100))
+    request_data = db.Column(db.Text)
+    expectation = db.Column(db.String(1000))
+
+
+    def __init__(self, name, desc, url, request_type, request_data, expectation):
+        # self.id = id
+        self.name = name
+        self.desc = desc
+        self.url = url
+        self.request_data = request_data
+        self.request_type = request_type
+        self.expectation = expectation
+
+    def __repr__(self):
+        return '<User %r>' % self.name

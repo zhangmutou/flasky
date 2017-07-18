@@ -1,0 +1,72 @@
+<div class="modal fade" id="show" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">详情</h4>
+      </div>
+      <div id="liveAPIEndpoints">
+        <div data-reactid=".0">
+          <div class="modal-body" data-reactid=".0.0">
+            <div class="row" data-reactid=".0.0.0">
+              <div class="col-md-6 request" data-reactid=".0.0.0.0">
+                <div data-reactid=".0.0.0.0.0">
+                  <h4 data-reactid=".0.0.0.0.0.0">Request</h4>
+                    <div data-reactid=".0.0.0.0.0.0">
+                      <p>
+                      <strong>API Endpoint:</strong>
+                      <span class="req-url" id="request-url"></span>
+                      </p>
+                    </div>
+                    <div data-reactid=".0.0.0.0.0.1">
+                      <p>
+                      <strong>ID: </strong>
+                      <span class="req-url" id="request-id"></span>
+                      </p>
+                    </div>
+                    <div data-reactid=".0.0.0.0.0.2">
+                      <p>
+                      <strong>名称:</strong>
+                      <span class="req-url" id="request-name"></span>
+                      </p>
+                    </div>
+                    <div data-reactid=".0.0.0.0.0.3">
+                      <p>
+                      <strong>描述:</strong>
+                      <span class="req-url" id="request-desc"></span>
+                      </p>
+                    </div>
+                    <div data-reactid=".0.0.0.0.0.4">
+                      <p>
+                      <strong>方法:</strong>
+                      <span class="req-url" id="request-type"></span>
+                      </p>
+                    </div>
+                    <div data-reactid=".0.0.0.0.0.5">
+                      <h5>参数:</h5>
+                      <pre><code id="request-data"></code></pre>
+                    </div>
+                    <div data-reactid=".0.0.0.0.0.6">
+                      <h5>期望:</h5>
+                      <pre><code id="request-expection"></code></pre>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-6 response" data-reactid=".0.0.0.1">
+                <div data-reactid=".0.0.0.1.0">
+                  <h4 data-reactid=".0.0.0.1.0.0">Response</h4>
+                  <p class="lead text-center" data-reactid=".0.0.0.1.0.1" id="awaiting">Awaiting request...</p>
+                  <pre><code id="response-data"></code></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" data-reactid=".0.1">
+        <button type="button" class="btn btn-default" data-dismiss="modal" data-reactid=".0.1.0" id="close-show-modal">Close</button>
+        <button type="submit" class="btn btn-primary" data-reactid=".0.1.1" id="send-modal" onclick="send_case(this)">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
