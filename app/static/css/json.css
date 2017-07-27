@@ -19,3 +19,7 @@ pre {
 .req-url {
   color: olive;
 }
+
+.table tbody tr td{
+            vertical-align: middle;
+        }

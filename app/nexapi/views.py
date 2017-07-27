@@ -7,6 +7,7 @@ from . import nexapi
 from .. import db
 from ..models import NexApiCase
 from ..decorators import admin_required, permission_required
+from .forms import NameForm, DescForm, ConfigForm
 
 @nexapi.route('/show', methods=['GET'])
 @login_required
@@ -111,6 +112,14 @@ def send():
 def test():
     ids = request.values.getlist('ids[]')
     return jsonify({'msg':ids})
+
+
+@nexapi.route('/config', methods=['POST', 'GET'])
+@login_required
+@admin_required
+def config():
+    form = ConfigForm()
+    return render_template('nexapi/_nex_api_config_edit.html', form=form)
 
 
 def req_api(url, case_data):

@@ -1,3 +1,33 @@
-<div>
-	
+<br>
+<div class="panel panel-default">
+	<div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>名称</th>
+          <th>配置</th>
+          <th>描述</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>数据库配置</td>
+          <td>数据库</td>
+          <td>root:1234@10.2333.222.333/nex</td>
+          <td>
+            <a href="{{ url_for('nexapi.config') }}" data-toggle="modal" data-target="#show-config" id="edit-config" >编辑</a>
+            <a data-toggle="modal" data-target="#show-config" id="del-config">删除</a>
+          </td>
+          </tr>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="modal fade" id="show-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
 </div>

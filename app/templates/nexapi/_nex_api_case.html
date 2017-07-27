@@ -23,33 +23,33 @@
   </div>
   <div class="panel panel-default">
     <div class="panel-heading">全部用例</div>
-    <div class="panel-body">33</div>
+    <div class="panel-body"><p class="text-info">4444<abbr title="attribute">attr</abbr></p></div>
     <table class="table  table-striped table-bordered table-hover table-condensed" id="case_table">
     <thead>
       <tr>
-        <th>
+        <th class="text-center">
           <label>
             <input type="checkbox" name="checkcase" id="checkall" value=0>
           </label>
         </th>
-        <th>ID</th>
+        <th class="text-center">ID</th>
         <th>名称</th>
         <th>描述</th>
-        <th>操作</th>
+        <th class="text-center">操作</th>
       </tr>
     </thead>
     <tbody>
       {% for c in cases %}
         <tr>
-          <td>
+          <td class="text-center">
             <label>
                 <input type="checkbox" name="case" value={{c.id}}>
             </label>
           </td>
-          <td>{{c.id}}</td>
+          <td class="text-center">{{c.id}}</td>
           <td>{{c.name}}</td>
           <td>{{c.desc}}</td>
-          <td>
+          <td class="text-center">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#show" id="btn-case-show" value={{c.id}} onclick="show_case(this)">
               <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
