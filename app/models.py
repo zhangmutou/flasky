@@ -407,3 +407,20 @@ class NexApiCase(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.name
+
+class NexApiConfig(db.Model):
+    __tablename__ = 'nex_api_config'
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100))
+    desc = db.Column(db.String(100))
+    config = db.Column(db.String(100))
+
+class ServerMonitor(db.Model):
+    __tablename__ = 'server_monitor'
+    id = db.Column(db.Integer, primary_key=True)
+    cpu_info = db.Column(db.String(1000))
+    disks_info = db.Column(db.String(1000))
+    memory_info = db.Column(db.String(1000))
+    network_info = db.Column(db.String(1000))
+    sensors_info = db.Column(db.String(1000))
+    moniter_time = db.Column(db.DateTime, default=datetime.utcnow)
