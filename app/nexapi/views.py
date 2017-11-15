@@ -121,6 +121,12 @@ def config():
     form = ConfigForm()
     return render_template('nexapi/_nex_api_config_edit.html', form=form)
 
+@nexapi.route('/test-server', methods=['POST', 'GET'])
+@login_required
+@admin_required
+def test_server():
+    return render_template('server_monitor.html')
+
 
 def req_api(url, case_data):
     req_url = 'http://10.165.124.28:8000' + url

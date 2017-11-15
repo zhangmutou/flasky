@@ -41,7 +41,7 @@
                 <li><a href="{{ url_for('nexapi.show_all') }}">Charge平台</a></li>
                 {% endif %}
                 {% if current_user.can(Permission.MODERATE_COMMENTS) %}
-                <li><a href="{{ url_for('nexapi.show_all') }}">运管平台</a></li>
+                <li><a href="{{ url_for('nexapi.test_server') }}">服务器监控</a></li>
                 {% endif %}
             </ul>
             <ul class="nav navbar-nav navbar-right">

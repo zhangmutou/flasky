@@ -21,8 +21,8 @@ def server_monitor(self):
 									memory_info=json.dumps(memory_info),
 									disks_info=json.dumps(disks_info),
 									network_info=json.dumps(network_info),
-									sensors_info=json.dumps(sensors_info)
-									# moniter_time=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+									sensors_info=json.dumps(sensors_info),
+									moniter_time=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 									)
 	db.session.add(server_monitor)
 	logger.info('{}: done!'.format(self.request))
@@ -42,6 +42,7 @@ def cpu():
 		'steal': cpu.steal,
 		'guest': cpu.guest,
 		'guest_nice': cpu.guest_nice,
+		'percent': cpu_usage
 		# 'interrupt': cpu.interrupt,
 		# 'dpc': cpu.dpc
 	}

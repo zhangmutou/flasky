@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}服务器监控{% endblock %}
+{% block head %}
+    {{ super() }}
+    <script>var $SCRIPT_ROOT = {{request.script_root|tojson|safe}}</script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+{% endblock %}
+
+
+
+<!-- {% block page_content %} -->
+<body background="{{ url_for('static', filename='images/huise3.jpg') }}">
+  <div id="container" >
+    <script src="{{ url_for('static', filename='js/server_monitor.js') }}"></script>
+  </div>
+</body>
+
+<!-- {% endblock %} -->
+

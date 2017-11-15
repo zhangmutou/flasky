@@ -52,6 +52,9 @@ def create_app(config_name):
     from .api_1_0 import api as api_1_0_blueprint
     app.register_blueprint(api_1_0_blueprint, url_prefix='/api/v1.0')
 
+    from .monitor import mointor as mointor_blueprint
+    app.register_blueprint(mointor_blueprint, url_prefix='/mointor')
+
     return app
 
 def make_celery(app):
