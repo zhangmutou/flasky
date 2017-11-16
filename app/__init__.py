@@ -40,21 +40,6 @@ def create_app(config_name):
         from flask_sslify import SSLify
         sslify = SSLify(app)
 
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
-
-    from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint, url_prefix='/auth')
-
-    from .nexapi import nexapi as nexapi_blueprint
-    app.register_blueprint(nexapi_blueprint, url_prefix='/nex-api')
-
-    from .api_1_0 import api as api_1_0_blueprint
-    app.register_blueprint(api_1_0_blueprint, url_prefix='/api/v1.0')
-
-    from .monitor import mointor as mointor_blueprint
-    app.register_blueprint(mointor_blueprint, url_prefix='/mointor')
-
     return app
 
 def make_celery(app):
@@ -74,5 +59,22 @@ def make_celery(app):
     celery.Task = ContextTask
     return celery
 
+def register_app_blueprint(app):
+    from .main import main as main_blueprint
+    app.register_blueprint(main_blueprint)
+
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint, url_prefix='/auth')
+
+    from .nexapi import nexapi as nexapi_blueprint
+    app.register_blueprint(nexapi_blueprint, url_prefix='/nex-api')
+
+    from .api_1_0 import api as api_1_0_blueprint
+    app.register_blueprint(api_1_0_blueprint, url_prefix='/api/v1.0')
+
+    from .monitor import mointor as mointor_blueprint
+    app.register_blueprint(mointor_blueprint, url_prefix='/mointor')
+
 app = create_app(os.getenv('FLASK_CONFIG') or 'default')
 celery = make_celery(app)
+register_app_blueprint(app)

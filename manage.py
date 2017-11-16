@@ -14,12 +14,12 @@ if os.path.exists('.env'):
             os.environ[var[0]] = var[1]
 
 from app.models import User, Follow, Role, Permission, Post, Comment, NexApiCase
-from app import app, db, celery
+from app import db, celery, app
 from flask_script import Manager, Shell
 from flask_migrate import Migrate, MigrateCommand
 from app.workers import server_monitor_worker
 
-# app = create_app(os.getenv('FLASK_CONFIG') or 'default')
+# register_app_blueprint(app)
 # celery = Celery(app.name)
 manager = Manager(app)
 migrate = Migrate(app, db)
