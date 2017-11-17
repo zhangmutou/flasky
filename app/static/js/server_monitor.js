@@ -24,7 +24,7 @@ $(function () {
                 plotOptions: {
                     line: {
                         dataLabels: {
-                            enabled: true          // 开启数据标签
+                            enabled: false          // 开启数据标签
                         },
                         enableMouseTracking: true // 关闭鼠标跟踪，对应的提示框、点击事件会失效
                     }

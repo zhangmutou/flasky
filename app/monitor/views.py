@@ -20,19 +20,22 @@ def all():
 	x_categories = []
 	cpu = {'name': 'CPU', 'data':[]}
 	memory = {'name': '内存', 'data': []}
+	disks = {'name': '磁盘', 'data': []}
 	series = []
 	if mointor_info.count() > 0:
 		for m in mointor_info:
 			x_categories.append(m.moniter_time.strftime("%H:%M:%S"))
 			cpu['data'].append(json.loads(m.cpu_info)['percent'])
 			memory['data'].append(json.loads(m.memory_info)['percent'])
+			disks['data'].append(json.loads(m.disks_info)['disk_usage_info']['percent'])
 
 	series.append(memory)
 	series.append(cpu)
+	series.append(disks)
 	# print(current_user.email)
 	# test_worker.delay({"user":current_user.email})
-	print(current_user.email)
-	send_email.delay(current_user.email, 'test', '/mail/worker_email', countdown=20)
+	# print(current_user.email)
+	# send_email.delay(current_user.email, 'test', '/mail/worker_email', countdown=20)
 
 	return jsonify({'x_categories':x_categories, 'series':series})
 

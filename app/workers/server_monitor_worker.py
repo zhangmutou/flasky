@@ -29,7 +29,7 @@ def server_monitor(self):
 
 def cpu():
 	cpu = psutil.cpu_times()
-	cpu_usage = cpu.user / cpu.system
+	percent = psutil.cpu_percent()
 	# print('%.2f%%' %(cpu_usage))
 	cpu_info = {
 		'user': cpu.user,
@@ -42,12 +42,11 @@ def cpu():
 		'steal': cpu.steal,
 		'guest': cpu.guest,
 		'guest_nice': cpu.guest_nice,
-		'percent': cpu_usage
+		'percent': percent
 		# 'interrupt': cpu.interrupt,
 		# 'dpc': cpu.dpc
 	}
 	return cpu_info
-	# print(cpu_info)
 
 def memory():
 	memory = psutil.virtual_memory()
@@ -85,8 +84,6 @@ def disks():
 		'write_merged_count': disk_io_counters.write_merged_count,
 		'busy_time': disk_io_counters.busy_time
 	}
-	# print(disk_usage_info)
-	# print(disk_io_counters_info)
 	return {'disk_usage_info': disk_usage_info, 'disk_io_counters_info': disk_io_counters_info}
 
 def network():
@@ -101,7 +98,6 @@ def network():
 		'dropin': net_io_counters.dropin,
 		'dropout': net_io_counters.dropout,
 	}
-	# print(net_io_counters_info)
 	return net_io_counters_info
 
 def sensors():

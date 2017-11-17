@@ -37,8 +37,8 @@ class Config:
         # Executes every 3s
         'cpu': {
             'task': 'app.workers.server_monitor_worker.server_monitor',
-            # 'schedule': crontab()
-            'schedule': timedelta(seconds=10)
+            'schedule': crontab('*/5')
+            # 'schedule': timedelta(seconds=10)
         },
     #     'memory': {
     #         'task': 'app.workers.server_monitor_worker.memory',
